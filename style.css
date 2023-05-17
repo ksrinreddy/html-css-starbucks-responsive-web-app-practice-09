@@ -1,0 +1,369 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+:root {
+    --darkColor: #272727;
+    --lightColor: #fff;
+    --primaryColor: #008000;
+
+    --navFontSize: 1rem;
+    --titleFontSize: 2rem;
+    --textFontSize: 0.9rem;
+    --buttonFontSize: 0.8rem;
+    --marginBottomSection: 2.5rem;
+    --marginBottomHeader: 1.5rem;
+    /* --headerHeight: 150px; */
+    --showcasePadding: 1rem;
+    --showcasePadding768pxLeftRight: 5rem;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--darkColor)
+}
+
+.showcase {
+    max-width: 100%;
+    max-height: 100vh;
+    padding: var(--showcasePadding);
+    position: relative;
+}
+
+
+header {
+    /* height: var(--headerHeight); */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    transform: scale(0.7);
+    cursor: pointer;
+}
+
+.navbar a {
+    display: block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 1rem;
+    color: var(--darkColor);
+
+}
+
+.navbar a:hover {
+    color: var(--lightColor);
+    background: rgb(0, 147, 17);
+}
+
+.current-page {
+    background: rgb(0, 147, 17);
+    color: var(--lightColor);
+}
+
+.navbar a:hover.current-page {
+    background: rgb(0, 147, 17);
+    color: var(--darkColor);
+}
+
+
+
+
+/* for menu toggle */
+
+/* .toggle img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: none;
+} */
+
+/* .navbar-toggle {
+    position: absolute;
+    top: calc(var(--headerHeight) + var(--showcasePadding));
+    right: var(--showcasePadding);
+    width: calc(100vw - var(--showcasePadding)*2);
+    height: calc(100vh - var(--headerHeight));
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2;
+    display: none;
+} */
+
+/* .navbar a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--lightColor);
+    text-align: center;
+} */
+
+/* .navbar a:hover {
+    background: var(--primaryColor);
+    color: var(--lightColor);
+} */
+
+
+
+
+
+
+.hero-text {
+    padding: 2rem 0;
+}
+
+.hero-text h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.hero-text h1 span {
+    color: var(--primaryColor);
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+.hero-text p {
+    margin-bottom: 1rem;
+}
+
+.hero .btn {
+    background: var(--primaryColor);
+    color: var(--lightColor);
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.hero .btn:hover {
+    transform: scale(1.1);
+}
+
+.hero-text {
+    text-align: center;
+}
+
+.hero-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primaryColor);
+    border-radius: 1rem;
+}
+
+.hero-img img {
+    width: 80%;
+}
+
+.hero-text {
+    margin-bottom: var(--marginBottomSection);
+}
+
+
+
+.thumbnail ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thumbnail img {
+    transform: scale(0.5);
+    transition: 0.4s;
+}
+
+.thumbnail img:hover {
+    transform: scale(0.7) translateY(-1rem);
+
+}
+
+.social ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social img {
+    transform: scale(0.5);
+    transition: 0.4s;
+}
+
+.social img:hover {
+    transform: translateY(-0.1rem);
+}
+
+
+/* media queries */
+@media screen and (min-width:425px) {
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text h1 span {
+        font-size: 3.5rem;
+    }
+
+    .hero-img img {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .social img {
+        transform: scale(0.5);
+    }
+}
+
+@media screen and (min-width:540px) {
+    .hero-text {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-img img {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .social img {
+        transform: scale(0.5);
+    }
+}
+
+@media screen and (min-width:768px) {
+    .showcase {
+        padding: 1rem 5rem;
+    }
+
+    .navbar ul {
+        display: flex;
+    }
+
+
+    .navbar a {
+        padding: 0.4rem 1.2rem;
+        color: var(--darkColor);
+    }
+
+    .navbar a:hover {
+        background: var(--primaryColor);
+        color: var(--lightColor);
+    }
+
+    .hero {
+        display: grid;
+        /* grid-template-columns: 65% 35%; */
+        grid-template-columns: 1.5fr 1fr;
+        align-items: center;
+        justify-content: space-between;
+        margin: 2rem 0;
+    }
+
+    .hero-text {
+        text-align: left;
+        margin-bottom: 0;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text h1 span {
+        font-size: 3rem;
+    }
+
+    .hero-text p {
+        max-width: 250px;
+    }
+
+    .hero-img {
+        background: none;
+    }
+
+    .hero-img img {
+        width: 100%;
+    }
+
+    .social ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 5rem;
+        height: 100%;
+    }
+
+    .social img {
+        transform: scale(0.5);
+        filter: invert(1);
+    }
+
+    .circle {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--primaryColor);
+        z-index: -1;
+        clip-path: circle(450px at right 600px);
+    }
+
+}
+
+@media screen and (min-width:987px) {
+    .hero {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-text h1 {
+        font-size: 3rem;
+        line-height: 1;
+    }
+
+    .hero-text h1 span {
+        font-size: 4rem;
+    }
+
+    .hero-text p {
+        max-width: 400px;
+    }
+
+    .hero-img img {
+        width: 50%;
+    }
+
+    .showcase {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+
+    .circle {
+        clip-path: circle(450px at right 600px);
+    }
+}
